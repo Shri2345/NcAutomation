@@ -1,0 +1,15 @@
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\MastercamDriver.dll
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\MastercamDriver.pdb
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\NETHook3_0.dll
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\ToolNetApi.dll
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\ModelessDialogTabHandler.dll
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\NETHook3_0.xml
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\bin\x64\Debug\ToolNetApi.xml
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\RibbonCustomization.csproj.AssemblyReference.cache
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\MastercamDriver.Properties.Messages.resources
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\MastercamDriver.Properties.Resources.resources
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\RibbonCustomization.csproj.GenerateResource.cache
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\RibbonCustomization.csproj.CoreCompileInputs.cache
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\RibbonCustomization.csproj.CopyComplete
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\MastercamDriver.dll
+C:\Users\shirish.i\Downloads\mastercam2024-RibbonCustomization (4)\RibbonCustomization\obj\x64\Debug\MastercamDriver.pdb

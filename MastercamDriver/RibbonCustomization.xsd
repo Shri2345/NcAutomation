@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="enumBoolean">
+    <xs:restriction base="xs:NCName">
+      <xs:enumeration value="False" />
+      <xs:enumeration value="True" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeFTCommand">
+    <xs:annotation>
+      <xs:documentation>FT Commands combine the FT Application and Function names separated by a single period.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^\.]+\.[^\.]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeKeyTip">
+    <xs:annotation>
+      <xs:documentation>KeyTips are one or more uppercase letters or numbers use to enable accessibility via the keyboard.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z|0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="typeElementBase">
+    <xs:annotation>
+      <xs:documentation>Ribbon Elements which render with an Icon, Label, KeyTip, and ToolTip.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="FTCommand" type="typeFTCommand" use="required"/>
+    <xs:attribute name="KeyTip" type="typeKeyTip" use="optional"/>
+  </xs:complexType>
+
+  <xs:simpleType name="enumLargeMode">
+    <xs:restriction base="xs:NCName">
+      <xs:enumeration value="Default">
+        <xs:annotation>
+          <xs:documentation>Button will be sized using default Ribbon rules based on available space.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Always">
+        <xs:annotation>
+          <xs:documentation>Button will always be rendered Large.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Never">
+        <xs:annotation>
+          <xs:documentation>Button will always be rendered Small (aka Never Large).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="typeButton">
+    <xs:annotation>
+      <xs:documentation>Buttons are Ribbon Elements which also control how Large they will render.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="typeElementBase">
+        <xs:attribute name="LargeMode" type="enumLargeMode">
+          <xs:annotation>
+            <xs:documentation>Specifies when the Button will be rendered Large or Small.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="typeNestedButton">
+    <xs:complexContent>
+      <xs:extension base="typeButton">
+        <xs:sequence>
+          <xs:sequence>
+            <xs:element name="Elements" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                  <xs:element name="Button" type="typeButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="PopupButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="SplitButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="Separator" minOccurs="0" />
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="typeGalleryGroup">
+    <xs:attribute name="Label" type="xs:string"/>
+    <xs:attribute name="NumberOfElements" type="xs:positiveInteger"/>
+  </xs:complexType>
+
+  <xs:complexType name="typeGalleryGroups">
+    <xs:sequence>
+      <xs:element name="GalleryGroup" type="typeGalleryGroup" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="typeCommandGallery">
+    <xs:complexContent>
+      <xs:extension base="typeElementBase">
+        <xs:sequence>
+          <xs:sequence>
+            <xs:element name="Elements" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:element name="Button" type="typeButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="PopupButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="SplitButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="CommandGallery" type="typeCommandGallery" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="Separator" minOccurs="0" />
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="GalleryGroups" type="typeGalleryGroups" minOccurs="0" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="ButtonMode" type="enumBoolean"/>
+        <xs:attribute name="IconsPerRow" type="xs:positiveInteger"/>
+        <xs:attribute name="InitialColumns" type="xs:positiveInteger"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="typeGroup">
+    <xs:complexContent>
+      <xs:extension base="typeElementBase">
+        <xs:sequence>
+          <xs:element name="Elements" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Button" type="typeButton" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="PopupButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="SplitButton" type="typeNestedButton" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="CommandGallery" type="typeCommandGallery" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Separator" minOccurs="0" maxOccurs="unbounded" />
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="LauncherFTCommand" type="typeFTCommand" use="optional" />
+        <xs:attribute name="LauncherKeyTip" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="typeTab">
+    <xs:annotation>
+      <xs:documentation>Represents a Ribbon Tab with a Label and KeyTip.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Groups" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Container for 0 or more Group XML elements.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Group" type="typeGroup" minOccurs="1" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Label" use="required" />
+    <xs:attribute name="KeyTip" type="typeKeyTip" use="optional" />
+  </xs:complexType>
+
+  <xs:element name="Ribbon">
+    <xs:annotation>
+      <xs:documentation>Top level XML element, required.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Tabs" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Container for 1 or more Tab XML elements.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tab" type="typeTab" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

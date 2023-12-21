@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ribbon>
+  <Tabs>
+    <Tab Label="Applications" KeyTip="Z" >
+      <Groups>
+        <Group FTCommand="MastercamDriver.MyRibbonGroupTwo" KeyTip="ZO" >
+          <Elements>
+			  <Button FTCommand="MastercamDriver.StartAddIn" KeyTip="P" LargeMode="Always" />			  
+          </Elements>
+        </Group>
+      </Groups>
+    </Tab>
+  </Tabs>
+</Ribbon>

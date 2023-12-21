@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{98BBC7F9-928A-4853-A7DC-C154BBEA2DB0}"
+	ProjectSection(SolutionItems) = preProject
+		RibbonCustomization.xsd = RibbonCustomization.xsd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MastercamDriver", "MastercamDriver.csproj", "{8C531CEA-1638-4F31-A97D-DA37CC11E281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Debug|x64.ActiveCfg = Debug|x64
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Debug|x64.Build.0 = Debug|x64
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Release|x64.ActiveCfg = Release|x64
+		{8C531CEA-1638-4F31-A97D-DA37CC11E281}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

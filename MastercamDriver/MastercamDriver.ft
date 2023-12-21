@@ -1,0 +1,91 @@
+#----------------------------------------------------------
+# NET-Hook function table
+#----------------------------------------------------------
+# Name      MastercamDriver.ft
+# NETHook   MastercamDriver.dll
+#
+# Notes     This FT file MUST located in the chooks folder!
+#----------------------------------------------------------
+
+#---------------------------------
+# Assign a unique application name
+#---------------------------------
+APPLICATION "MastercamDriver"
+
+#--------------------------------------
+# Assign the Settings-Customize Category
+#--------------------------------------
+CATEGORY "-My_Ribbbon_Customization-"
+
+#---------------
+# File locations
+#---------------
+FUNC_DLL   "MastercamDriver.dll"
+RES_DLL    "SAME"
+dnRES_NAME "MastercamDriver.Properties.Resources"
+
+#--------------------------------
+# Declare the public entry points
+#--------------------------------
+#FUNCTION NET "Run"
+#  dnTIP  TipString
+#  dnSPNG Icon16
+#  dnLPNG Icon32
+#  HIDDEN
+#END_FUNCTION
+
+FUNCTION NET "MyRibbonGroupOne"
+  dnTIP  "RIBBON_ONE_GROUP"
+  dnSPNG "GROUP_ONE_16"
+  dnLPNG "GROUP_ONE_32"
+END_FUNCTION
+
+FUNCTION NET "MyRibbonGroupTwo"
+  HIDDEN
+  dnTIP  "RIBBON_TWO_GROUP"
+  dnSPNG "GROUP_TWO_16"
+  dnLPNG "GROUP_TWO_32"
+END_FUNCTION
+
+FUNCTION NET "GroupOneLauncher"
+  dnTIP  "RIBBON_ONE_GROUP_LAUNCHER"
+  dnSPNG "LAUNCHER_16"
+  dnLPNG "LAUNCHER_32"
+END_FUNCTION
+
+FUNCTION NET "StartAddIn"
+  dnTIP  "COMMAND_ONE"
+  dnSPNG "COMMAND_ONE_16"
+  dnLPNG "COMMAND_ONE_32"
+END_FUNCTION
+
+FUNCTION NET "CommandTwo"
+  dnTIP  "COMMAND_TWO"
+  dnSPNG "COMMAND_TWO_16"
+  dnLPNG "COMMAND_TWO_32"
+END_FUNCTION
+
+FUNCTION NET "CommandThree"
+  dnTIP  "COMMAND_THREE"
+  dnSPNG "COMMAND_THREE_16"
+  dnLPNG "COMMAND_THREE_32"
+END_FUNCTION
+
+FUNCTION NET "MyRibbonGallery"
+  HIDDEN
+  dnTIP  "RIBBON_GALLERY"
+  dnSPNG "GALLERY_16"
+  dnLPNG "GALLERY_32"
+END_FUNCTION
+
+FUNCTION NET "Edit"
+  dnTIP  "EDIT"
+  dnSPNG "EDIT_16"
+  dnLPNG "EDIT_32"
+END_FUNCTION
+
+FUNCTION NET "Delete"
+  dnTIP  "DELETE"
+  dnSPNG "DELETE_16"
+  dnLPNG "DELETE_32"
+END_FUNCTION
