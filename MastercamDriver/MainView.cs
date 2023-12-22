@@ -27,7 +27,7 @@ namespace MastercamDriver
         public async void InitWebView()
         {
             //await WebView.EnsureCoreWebView2Async();
-            
+            //Testing the source control for changes. In our case, we use git.
             string MachineTempPath = Path.Combine(Environment.GetEnvironmentVariable("TEMP", EnvironmentVariableTarget.Machine), AssemblyName);
 
             await InitializeCoreWebView2Async(webView21, MachineTempPath);
